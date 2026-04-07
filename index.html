@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宗志军 | RUC Data Analyst Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .nav-text-grad {
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent; 
+            animation: shine 3s linear infinite; 
+            transition: transform 0.3s ease;
+        }
+        .group:hover .nav-text-grad {
+            transform: translateX(-12px) scale(1.05);
+        }
+        .grad-blue { background-image: linear-gradient(90deg, #2563eb, #06b6d4, #3b82f6, #2563eb); }
+        .grad-purple { background-image: linear-gradient(90deg, #9333ea, #d946ef, #a855f7, #9333ea); }
+        .grad-pink { background-image: linear-gradient(90deg, #db2777, #f43f5e, #ec4899, #db2777); }
+        .grad-indigo { background-image: linear-gradient(90deg, #4f46e5, #818cf8, #6366f1, #4f46e5); }
+    </style>
+</head>
+<body class="text-gray-800 antialiased selection:bg-blue-200 bg-grid-pattern min-h-screen relative">
+
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-6xl pointer-events-none z-[-1]">
+        <div class="absolute top-20 left-10 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+        <div class="absolute top-40 right-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20" style="animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite; animation-delay: 2s;"></div>
+    </div>
+
+    <main id="home" class="page-view active pb-20">
+        <div class="max-w-5xl mx-auto px-6">
+            
+            <header class="flex items-center justify-between py-10">
+                <div class="flex items-center cursor-default">
+                    <img src="ruc-logo.png" alt="RUC" class="h-10 w-auto mr-3.5 rounded-full shadow-sm border border-gray-200/50" onerror="this.style.display='none'">
+                    <span class="font-extrabold text-2xl tracking-tighter text-gray-900">ZONG<span class="text-blue-600">.</span></span>
+                </div>
+                <div class="hidden sm:block">
+                    <span class="px-4 py-1.5 bg-gray-100/50 text-gray-400 text-[10px] font-bold uppercase tracking-widest rounded-full border border-gray-200/50 shadow-sm">
+                        Portfolio
+                    </span>
+                </div>
+            </header>
+
+            <div class="text-center mb-16 mt-6">
+                <h1 class="text-6xl md:text-8xl font-extrabold tracking-tight text-gray-900 mb-6">
+                    <span class="text-gradient">宗志军</span>
+                </h1>
+                <div class="flex flex-col items-center gap-3 mb-6">
+                    <p class="text-2xl md:text-3xl font-semibold text-gray-700">
+                        中国人民大学 · 信息资源管理
+                    </p>
+                    <p class="text-gray-400 font-medium tracking-widest uppercase text-sm">Data Analyst · 2023 - 2027</p>
+                    
+                    <div class="flex flex-wrap items-center justify-center gap-4 md:gap-8 text-gray-500 text-sm font-medium mt-1">
+                        <a href="mailto:zongzong@ruc.edu.cn" class="flex items-center hover:text-blue-600 transition-colors">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            zongzong@ruc.edu.cn
+                        </a>
+                        <a href="tel:18518311733" class="flex items-center hover:text-blue-600 transition-colors">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            18518311733
+                        </a>
+                    </div>
+                </div>
+
+                <a href="简历.pdf" target="_blank" class="inline-flex items-center justify-center px-8 py-3.5 text-sm md:text-base font-bold text-white bg-gray-900 rounded-full hover:bg-blue-600 hover:shadow-xl hover:shadow-blue-500/30 transition-all duration-300 transform hover:-translate-y-1">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    获取完整 PDF 简历
+                </a>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-16">
+                <button onclick="switchPage('experience')" class="relative glass-panel rounded-3xl p-6 md:p-8 flex items-center justify-center group hover:bg-blue-50/60 hover:shadow-xl hover:shadow-blue-500/10 hover:!border-blue-300 transition-all duration-300 overflow-hidden">
+                    <h2 class="relative z-10 text-lg md:text-2xl font-extrabold tracking-widest nav-text-grad grad-blue">实习经历</h2>
+                    <svg class="absolute right-4 md:right-6 w-6 h-6 text-blue-500 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-out z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </button>
+                <button onclick="switchPage('research')" class="relative glass-panel rounded-3xl p-6 md:p-8 flex items-center justify-center group hover:bg-purple-50/60 hover:shadow-xl hover:shadow-purple-500/10 hover:!border-purple-300 transition-all duration-300 overflow-hidden">
+                    <h2 class="relative z-10 text-lg md:text-2xl font-extrabold tracking-widest nav-text-grad grad-purple">科研探索</h2>
+                    <svg class="absolute right-4 md:right-6 w-6 h-6 text-purple-500 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-out z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </button>
+                <button onclick="switchPage('projects')" class="relative glass-panel rounded-3xl p-6 md:p-8 flex items-center justify-center group hover:bg-pink-50/60 hover:shadow-xl hover:shadow-pink-500/10 hover:!border-pink-300 transition-all duration-300 overflow-hidden">
+                    <h2 class="relative z-10 text-lg md:text-2xl font-extrabold tracking-widest nav-text-grad grad-pink">项目履历</h2>
+                    <svg class="absolute right-4 md:right-6 w-6 h-6 text-pink-500 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-out z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </button>
+                <button onclick="switchPage('campus')" class="relative glass-panel rounded-3xl p-6 md:p-8 flex items-center justify-center group hover:bg-indigo-50/60 hover:shadow-xl hover:shadow-indigo-500/10 hover:!border-indigo-300 transition-all duration-300 overflow-hidden">
+                    <h2 class="relative z-10 text-lg md:text-2xl font-extrabold tracking-widest nav-text-grad grad-indigo">在校实践</h2>
+                    <svg class="absolute right-4 md:right-6 w-6 h-6 text-indigo-500 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-out z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                
+                <div class="space-y-6 flex flex-col">
+                    <div class="glass-panel rounded-3xl p-8 flex-1">
+                        <h3 class="text-blue-600 text-xs font-bold uppercase tracking-widest mb-4">Profile</h3>
+                        <p class="text-gray-600 leading-relaxed text-sm">
+                            作为 ISFJ 守护者型人格，我待人真诚、细心严谨。具备出色的逻辑思维与数据分析能力，擅长从海量数据中挖掘核心价值并输出可落地方案。无论在风控模型腹地还是运营前线，始终坚持业务驱动。
+                        </p>
+                    </div>
+                    <div class="glass-panel rounded-3xl p-8">
+                        <h3 class="text-purple-600 text-xs font-bold uppercase tracking-widest mb-6">Soft Skills</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between text-xs font-bold mb-1.5 text-gray-600"><span>沟通协调与团队合作</span><span>95%</span></div>
+                                <div class="w-full bg-purple-50 h-1.5 rounded-full overflow-hidden"><div class="progress-fill bg-purple-500 h-full rounded-full" data-width="95%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-xs font-bold mb-1.5 text-gray-600"><span>适应性与灵活性</span><span>90%</span></div>
+                                <div class="w-full bg-purple-50 h-1.5 rounded-full overflow-hidden"><div class="progress-fill bg-purple-500 h-full rounded-full" data-width="90%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-xs font-bold mb-1.5 text-gray-600"><span>逻辑思维和执行力</span><span>98%</span></div>
+                                <div class="w-full bg-purple-50 h-1.5 rounded-full overflow-hidden"><div class="progress-fill bg-purple-500 h-full rounded-full" data-width="98%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-xs font-bold mb-1.5 text-gray-600"><span>时间管理和自我管理</span><span>92%</span></div>
+                                <div class="w-full bg-purple-50 h-1.5 rounded-full overflow-hidden"><div class="progress-fill bg-purple-500 h-full rounded-full" data-width="92%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel rounded-3xl p-8 bg-white/40 flex flex-col h-full">
+                    <h3 class="text-gray-900 text-xs font-bold uppercase tracking-widest mb-8 border-b border-gray-200 pb-4">Core Stack & Proficiency</h3>
+                    <div class="space-y-4 flex-1 justify-center flex flex-col">
+                        <div>
+                            <div class="flex justify-between items-end mb-1.5">
+                                <span class="text-sm font-bold text-gray-700">SQL</span>
+                                <span class="text-xs font-mono text-blue-600 font-bold">90%</span>
+                            </div>
+                            <div class="w-full bg-blue-50 h-2 rounded-xl overflow-hidden border border-blue-100/50"><div class="progress-fill bg-blue-600 h-full rounded-xl" data-width="90%"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-end mb-1.5">
+                                <span class="text-sm font-bold text-gray-700">Python</span>
+                                <span class="text-xs font-mono text-blue-600 font-bold">85%</span>
+                            </div>
+                            <div class="w-full bg-blue-50 h-2 rounded-xl overflow-hidden border border-blue-100/50"><div class="progress-fill bg-blue-600 h-full rounded-xl" data-width="85%"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-end mb-1.5">
+                                <span class="text-sm font-bold text-gray-700">Office Suite <span class="text-[10px] text-gray-400 font-normal ml-1">Excel/Word/PPT</span></span>
+                                <span class="text-xs font-mono text-blue-600 font-bold">85%</span>
+                            </div>
+                            <div class="w-full bg-blue-50 h-2 rounded-xl overflow-hidden border border-blue-100/50"><div class="progress-fill bg-blue-600 h-full rounded-xl" data-width="85%"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-end mb-1.5">
+                                <span class="text-sm font-bold text-gray-700">Tableau</span>
+                                <span class="text-xs font-mono text-blue-600 font-bold">80%</span>
+                            </div>
+                            <div class="w-full bg-blue-50 h-2 rounded-xl overflow-hidden border border-blue-100/50"><div class="progress-fill bg-blue-600 h-full rounded-xl" data-width="80%"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-end mb-1.5">
+                                <span class="text-sm font-bold text-gray-700">SPSS</span>
+                                <span class="text-xs font-mono text-blue-600 font-bold">80%</span>
+                            </div>
+                            <div class="w-full bg-blue-50 h-2 rounded-xl overflow-hidden border border-blue-100/50"><div class="progress-fill bg-blue-600 h-full rounded-xl" data-width="80%"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-end mb-1.5">
+                                <span class="text-sm font-bold text-gray-700">Machine Learning</span>
+                                <span class="text-xs font-mono text-blue-600 font-bold">75%</span>
+                            </div>
+                            <div class="w-full bg-blue-50 h-2 rounded-xl overflow-hidden border border-blue-100/50"><div class="progress-fill bg-blue-600 h-full rounded-xl" data-width="75%"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-end mb-1.5">
+                                <span class="text-sm font-bold text-gray-700">Power BI</span>
+                                <span class="text-xs font-mono text-blue-600 font-bold">75%</span>
+                            </div>
+                            <div class="w-full bg-blue-50 h-2 rounded-xl overflow-hidden border border-blue-100/50"><div class="progress-fill bg-blue-600 h-full rounded-xl" data-width="75%"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="pt-5 border-t border-gray-100 mt-4">
+                        <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest block mb-3">AI-Driven Coding Workflow</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 bg-black text-white text-[11px] rounded-lg font-bold italic shadow-md hover:bg-gray-800 transition-colors">Trae</span>
+                            <span class="px-3 py-1.5 bg-gray-900 text-white text-[11px] rounded-lg font-bold shadow-md hover:bg-gray-700 transition-colors">Cursor</span>
+                            <span class="px-3 py-1.5 bg-blue-50 text-blue-600 border border-blue-100 text-[11px] rounded-lg font-bold shadow-sm">LLM Agent</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <section id="experience" class="page-view pt-12 pb-20 max-w-4xl mx-auto px-6">
+        <button onclick="switchPage('home')" class="mb-8 inline-flex items-center text-sm font-semibold text-gray-500 hover:text-blue-600 transition-colors">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg> 返回主页
+        </button>
+        <h2 class="text-4xl font-extrabold text-gray-900 mb-10">实习经历 <span class="text-blue-600 text-2xl font-semibold tracking-wide ml-2">Experience</span></h2>
+        
+        <div class="space-y-8">
+            <div class="glass-panel rounded-3xl p-8 border-l-4 border-l-blue-500">
+                <div class="flex flex-col md:flex-row justify-between md:items-center mb-4">
+                    <h3 class="text-2xl font-bold text-gray-900">OPay <span class="text-blue-600 text-lg font-medium mx-2">|</span> 用户运营实习生</h3>
+                    <span class="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-bold rounded-full mt-2 md:mt-0 w-max">2026.01 - 至今</span>
+                </div>
+                <ul class="list-none space-y-3 text-sm text-gray-600">
+                    <li class="flex items-start"><span class="text-blue-400 mr-2">✦</span> 支持海外信贷产品用户增长，协助运营团队落地执行活动策划与渠道优化。</li>
+                    <li class="flex items-start"><span class="text-blue-400 mr-2">✦</span> 参与增长模型效果追踪，使用 Excel 独立完成数据清洗、深度分析及可视化，直接支持运营决策。</li>
+                    <li class="flex items-start"><span class="text-blue-400 mr-2">✦</span> 监控高频运营数据，精准识别增长机会点，推动业务线策略优化。</li>
+                </ul>
+            </div>
+
+            <div class="glass-panel rounded-3xl p-8 border-l-4 border-l-indigo-500">
+                <div class="flex flex-col md:flex-row justify-between md:items-center mb-4">
+                    <h3 class="text-2xl font-bold text-gray-900">北京新涌激算科技有限公司 <span class="text-indigo-600 text-lg font-medium mx-2">|</span> 模型数据分析实习生</h3>
+                    <span class="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-bold rounded-full mt-2 md:mt-0 w-max">2025.09 - 2026.01</span>
+                </div>
+                <ul class="list-none space-y-3 text-sm text-gray-600">
+                    <li class="flex items-start"><span class="text-indigo-400 mr-2">✦</span> 基于多源数据开展信贷单源/融合模型构建，全流程完成<strong>十万至百万级样本</strong>的数据预处理与特征工程。</li>
+                    <li class="flex items-start"><span class="text-indigo-400 mr-2">✦</span> 成功交付 6 项单源模型及 2 项融合模型，为风控业务线提供底层算力支持。</li>
+                    <li class="flex items-start"><span class="text-indigo-400 mr-2">✦</span> 独立开展文献调研并优化 LightGBM 参数，使模型<strong>训练时间缩短 25%</strong>，区分能力<strong>提升 4%</strong>。</li>
+                </ul>
+            </div>
+
+            <div class="glass-panel rounded-3xl p-8 border-l-4 border-l-cyan-500">
+                <div class="flex flex-col md:flex-row justify-between md:items-center mb-4">
+                    <h3 class="text-2xl font-bold text-gray-900">作业帮 <span class="text-cyan-600 text-lg font-medium mx-2">|</span> 海外广告投放数据实习生</h3>
+                    <span class="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-bold rounded-full mt-2 md:mt-0 w-max">2025.07 - 2025.09</span>
+                </div>
+                <ul class="list-none space-y-3 text-sm text-gray-600">
+                    <li class="flex items-start"><span class="text-cyan-400 mr-2">✦</span> 承接海外短视频广告多渠道需求，熟练编写 SQL 从 TikTok/Facebook 提取百万级全量原始数据。</li>
+                    <li class="flex items-start"><span class="text-cyan-400 mr-2">✦</span> 输出标准化周报/月报，通过交叉分析与单一变量法精准定位业务漏斗痛点，完成数据洞察报告。</li>
+                    <li class="flex items-start"><span class="text-cyan-400 mr-2">✦</span> 数据驱动业务增长：在曝光稳定下，实现次月整体<strong>注册量提升 9.2%</strong>、次日<strong>留存率提升至 31%</strong>，TikTok 点击下载<strong>转化率提升至 20.2%</strong>。</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="research" class="page-view pt-12 pb-20 max-w-4xl mx-auto px-6">
+        <button onclick="switchPage('home')" class="mb-8 inline-flex items-center text-sm font-semibold text-gray-500 hover:text-purple-600 transition-colors">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg> 返回主页
+        </button>
+        <h2 class="text-4xl font-extrabold text-gray-900 mb-10">科研探索 <span class="text-purple-600 text-2xl font-semibold tracking-wide ml-2">Research</span></h2>
+        
+        <div class="space-y-6">
+            <div class="glass-panel rounded-3xl p-8 border-l-4 border-l-blue-500">
+                <div class="flex flex-col md:flex-row justify-between md:items-center mb-4">
+                    <h3 class="text-xl font-bold text-gray-900">深海技术专利数据集构建与 AI 决策支持</h3>
+                    <span class="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-full mt-2 md:mt-0 w-max">数据基建与趋势演化</span>
+                </div>
+                <ul class="list-none space-y-3 text-sm text-gray-600">
+                    <li class="flex items-start"><span class="text-blue-400 mr-2">✦</span> 深度参与大型科研项目申报与落地，主导底层结构化数据库的搭建工作，清洗海量原始专利数据。</li>
+                    <li class="flex items-start"><span class="text-blue-400 mr-2">✦</span> 运用前沿人工智能算法挖掘深海技术发展演化趋势，为该领域的战略规划与投资决策提供底层的智能化辅助支持。</li>
+                </ul>
+            </div>
+
+            <div class="glass-panel rounded-3xl p-8 border-l-4 border-l-purple-500">
+                <div class="flex flex-col md:flex-row justify-between md:items-center mb-4">
+                    <h3 class="text-xl font-bold text-gray-900">基于大语言模型与可解释机器学习的生物炭规律挖掘</h3>
+                    <span class="px-3 py-1 bg-purple-50 text-purple-600 text-xs font-bold rounded-full mt-2 md:mt-0 w-max">2026.01 - 2026.03</span>
+                </div>
+                <ul class="list-none space-y-3 text-sm text-gray-600">
+                    <li class="flex items-start"><span class="text-purple-400 mr-2">✦</span> <strong>数据抽取：</strong> 基于 LLM 与 Python 从 <strong>4038 篇文献</strong>中自动化抽取信息，构建 1683 组样本的结构化数据集。</li>
+                    <li class="flex items-start"><span class="text-purple-400 mr-2">✦</span> <strong>模型调优：</strong> 搭建四类机器学习模型，通过 <strong>SHAP 分析</strong>识别核心工艺变量影响。</li>
+                    <li class="flex items-start"><span class="text-purple-400 mr-2">✦</span> <strong>量化成果：</strong> 实现 CatBoost 对 SSA 测试集 R²=0.626，<strong>XGBoost 对 pHpzc 测试集 R²=0.84</strong>，精度实现跨越式提升。</li>
+                </ul>
+            </div>
+
+            <div class="glass-panel rounded-3xl p-8 border-l-4 border-l-indigo-500">
+                <div class="flex flex-col md:flex-row justify-between md:items-center mb-4">
+                    <h3 class="text-xl font-bold text-gray-900">社会网络视角下农户弃耕决策 NetLogo 模拟研究</h3>
+                    <span class="px-3 py-1 bg-indigo-50 text-indigo-600 text-xs font-bold rounded-full mt-2 md:mt-0 w-max">2025.02 - 2025.04</span>
+                </div>
+                <ul class="list-none space-y-3 text-sm text-gray-600">
+                    <li class="flex items-start"><span class="text-indigo-400 mr-2">✦</span> <strong>系统仿真：</strong> 负责生态演化模型的全流程建模，利用 NetLogo 搭建含 <strong>400 个农户主体</strong>的 FWPI 多主体仿真模型。</li>
+                    <li class="flex items-start"><span class="text-indigo-400 mr-2">✦</span> <strong>情景模拟：</strong> 设计补贴/保险等三大模拟情景，成功实现对农户 20 年期动态决策行为的量化仿真。</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="page-view pt-12 pb-20 max-w-4xl mx-auto px-6">
+        <button onclick="switchPage('home')" class="mb-8 inline-flex items-center text-sm font-semibold text-gray-500 hover:text-pink-600 transition-colors">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg> 返回主页
+        </button>
+        <h2 class="text-4xl font-extrabold text-gray-900 mb-10">项目履历 <span class="text-pink-600 text-2xl font-semibold tracking-wide ml-2">Projects</span></h2>
+        
+        <div class="space-y-6">
+            <div class="glass-panel rounded-3xl p-8 border-l-4 border-l-pink-500">
+                <div class="flex flex-col md:flex-row justify-between md:items-center mb-4">
+                    <h3 class="text-xl font-bold text-gray-900">支付宝营销策略 A/B 测试效果分析</h3>
+                    <span class="px-3 py-1 bg-pink-50 text-pink-600 text-xs font-bold rounded-full mt-2 md:mt-0 w-max">核心统计假设检验</span>
+                </div>
+                <ul class="list-none space-y-3 text-sm text-gray-600">
+                    <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> 为验证不同营销策略对广告点击率的实际提升效果，获取并清洗了 <strong>74 万条</strong>实验组与对照组数据。</li>
+                    <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> 运用 Python 进行样本检验与 <strong>Z检验 (Z-test)</strong>，最终从统计学维度验证策略二使点击率较对照组<strong>提升近 50%</strong> 且结果极其显著，为营销预算倾斜提供坚实的数据支撑。</li>
+                </ul>
+            </div>
+
+            <div class="glass-panel rounded-3xl p-8 border-l-4 border-l-rose-500">
+                <div class="flex flex-col md:flex-row justify-between md:items-center mb-4">
+                    <h3 class="text-xl font-bold text-gray-900">阿里云大数据项目：基于房源的画像分析</h3>
+                    <span class="px-3 py-1 bg-rose-50 text-rose-600 text-xs font-bold rounded-full mt-2 md:mt-0 w-max">数据仓库与看板搭建</span>
+                </div>
+                <ul class="list-none space-y-3 text-sm text-gray-600">
+                    <li class="flex items-start"><span class="text-rose-400 mr-2">✦</span> 通过 DataWorks 对接多源分散数据库进行采集与标准化；利用 MaxCompute 进行数据清洗、去重与关联整合，搭建统一的底层数据仓库。</li>
+                    <li class="flex items-start"><span class="text-rose-400 mr-2">✦</span> 通过 Quick BI 设计多维度可视化面板，生成房源分布与价格趋势图表，为房源运营与市场决策提供直观数据支撑。</li>
+                </ul>
+            </div>
+            
+            <div class="glass-panel rounded-3xl p-8 border-l-4 border-l-red-500">
+                <div class="flex flex-col md:flex-row justify-between md:items-center mb-4">
+                    <h3 class="text-xl font-bold text-gray-900">基于高校多维评价体系的推荐数据可视化分析</h3>
+                    <span class="px-3 py-1 bg-red-50 text-red-600 text-xs font-bold rounded-full mt-2 md:mt-0 w-max">数据获取与商业化分析</span>
+                </div>
+                <ul class="list-none space-y-3 text-sm text-gray-600">
+                    <li class="flex items-start"><span class="text-red-400 mr-2">✦</span> 采集超 900 份定量问卷及数万条社交媒体舆情文本。利用 Python 自然语言处理库完成情感倾向分析，挖掘学校核心口碑特征。</li>
+                    <li class="flex items-start"><span class="text-red-400 mr-2">✦</span> 利用 <strong>Tableau</strong> 搭建了高交互度的数据可视化面板，并利用组合赋权模型输出结构化的最终推荐排序策略。</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="campus" class="page-view pt-12 pb-20 max-w-4xl mx-auto px-6">
+        <button onclick="switchPage('home')" class="mb-8 inline-flex items-center text-sm font-semibold text-gray-500 hover:text-indigo-600 transition-colors">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg> 返回主页
+        </button>
+        <h2 class="text-4xl font-extrabold text-gray-900 mb-10">在校实践 <span class="text-indigo-600 text-2xl font-semibold tracking-wide ml-2">Campus</span></h2>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="space-y-6">
+                <div class="glass-panel rounded-3xl p-8">
+                    <h3 class="text-lg font-bold text-gray-400 uppercase tracking-widest mb-6 border-b border-gray-200 pb-2">Leadership</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-900">校级学生实践中心 · <span class="text-indigo-600">协调联络部部长</span></h4>
+                            <p class="text-gray-600 text-sm mt-2 leading-relaxed">负责“千人百巷”、“大国边疆”等核心社会实践活动联系人的全流程管理。主导系统化培训、沟通问题协调与结项复盘，打通跨部门沟通链路，确保实践项目顺利落地。</p>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-900">信息资源管理学院 · <span class="text-indigo-600">体育部部长</span></h4>
+                            <p class="text-gray-600 text-sm mt-2 leading-relaxed">全权负责排球赛、篮球赛等大型赛事的组织统筹。从0到1策划赛事方案、资源调配与现场执行，锤炼了极强的抗压能力与团队领导力。</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-panel rounded-3xl p-8">
+                    <h3 class="text-lg font-bold text-gray-400 uppercase tracking-widest mb-6 border-b border-gray-100 pb-2">Life & Hobbies</h3>
+                    <ul class="space-y-5 text-gray-600 text-sm leading-relaxed">
+                        <li class="flex items-start">
+                            <span class="text-lg mr-3 mt-0.5">🎮</span>
+                            <div><strong class="text-gray-900 block mb-1">硬核高玩，数据解构</strong>王者荣耀(荣耀王者) / CF(传奇4) / CS(完美B+)。习惯用推演思维去解构游戏机制。</div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-lg mr-3 mt-0.5">⛰️</span>
+                            <div><strong class="text-gray-900 block mb-1">行者无疆</strong>热爱具有挑战性的徒步与爬山，用脚步丈量世界。</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <div class="relative bg-gradient-to-br from-amber-50 to-orange-50 p-8 rounded-3xl border border-amber-200 shadow-md overflow-hidden group hover:shadow-lg transition-all">
+                    <div class="absolute -right-6 -top-6 text-amber-500/10 w-32 h-32 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                        <svg fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-black text-amber-800 uppercase tracking-widest mb-4 relative z-10 border-b border-amber-200/50 pb-2">荣誉奖励 (Honors)</h3>
+                    <ul class="relative z-10 space-y-3">
+                        <li class="flex items-center text-sm md:text-base font-bold text-amber-900"><span class="text-amber-500 mr-3 text-xl">🏆</span> 国家励志奖学金</li>
+                        <li class="flex items-center text-sm md:text-base font-bold text-amber-900"><span class="text-amber-500 mr-3 text-xl">🏅</span> 校级二等奖学金</li>
+                        <li class="flex items-center text-sm md:text-base font-bold text-amber-900"><span class="text-amber-500 mr-3 text-xl">⭐</span> 优秀学生干部荣誉称号</li>
+                    </ul>
+                </div>
+
+                <div class="glass-panel rounded-3xl p-6">
+                    <h3 class="text-sm font-bold text-gray-900 uppercase mb-4 flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                        主修课程
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1.5 bg-teal-50 text-teal-700 text-xs font-bold rounded-lg border border-teal-100">数理统计</span>
+                        <span class="px-2.5 py-1.5 bg-teal-50 text-teal-700 text-xs font-bold rounded-lg border border-teal-100">统计学</span>
+                        <span class="px-2.5 py-1.5 bg-teal-50 text-teal-700 text-xs font-bold rounded-lg border border-teal-100">数据分析方法</span>
+                        <span class="px-2.5 py-1.5 bg-teal-50 text-teal-700 text-xs font-bold rounded-lg border border-teal-100">Python数据分析与应用</span>
+                        <span class="px-2.5 py-1.5 bg-teal-50 text-teal-700 text-xs font-bold rounded-lg border border-teal-100">数据科学</span>
+                        <span class="px-2.5 py-1.5 bg-teal-50 text-teal-700 text-xs font-bold rounded-lg border border-teal-100">数据库原理</span>
+                        <span class="px-2.5 py-1.5 bg-teal-50 text-teal-700 text-xs font-bold rounded-lg border border-teal-100">系统分析与设计</span>
+                        <span class="px-2.5 py-1.5 bg-teal-50 text-teal-700 text-xs font-bold rounded-lg border border-teal-100">数据治理</span>
+                        <span class="px-2.5 py-1.5 bg-teal-50 text-teal-700 text-xs font-bold rounded-lg border border-teal-100">信息检索</span>
+                    </div>
+                </div>
+
+                <div class="glass-panel rounded-3xl p-6">
+                    <h3 class="text-sm font-bold text-gray-900 uppercase mb-4 flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+                        专业资质与证书
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 bg-indigo-50 text-indigo-700 text-xs font-bold rounded-lg border border-indigo-100">CET-6</span>
+                        <span class="px-3 py-1.5 bg-indigo-50 text-indigo-700 text-xs font-bold rounded-lg border border-indigo-100">软考中级工程师</span>
+                        <span class="px-3 py-1.5 bg-indigo-50 text-indigo-700 text-xs font-bold rounded-lg border border-indigo-100">计算机三级数据库</span>
+                        <span class="px-3 py-1.5 bg-indigo-50 text-indigo-700 text-xs font-bold rounded-lg border border-indigo-100">计算机二级Python</span>
+                        <span class="px-3 py-1.5 bg-blue-50 text-blue-700 text-xs font-bold rounded-lg border border-blue-100">阿里云大数据项目证书</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function triggerProgressBars() {
+            const bars = document.querySelectorAll('.page-view.active .progress-fill');
+            bars.forEach(bar => {
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    const targetWidth = bar.getAttribute('data-width');
+                    if(targetWidth) {
+                        bar.style.width = targetWidth;
+                    }
+                }, 50);
+            });
+        }
+
+        function switchPage(pageId) {
+            const views = document.querySelectorAll('.page-view');
+            views.forEach(view => { 
+                view.classList.remove('active'); 
+            });
+            
+            const targetView = document.getElementById(pageId);
+            if(targetView) { 
+                targetView.classList.add('active'); 
+                if(pageId === 'home') {
+                    triggerProgressBars();
+                }
+            }
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            triggerProgressBars();
+        });
+    </script>
+</body>
+</html>

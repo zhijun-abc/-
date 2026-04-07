@@ -1,0 +1,127 @@
+/* =========================================
+   1. 基础设置与 CSS 变量声明
+========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+:root {
+    --bg-color: #f8fafc;
+    --text-main: #1f2937;
+    /* 流光渐变色全局变量 */
+    --grad-main: linear-gradient(135deg, #2563eb, #8b5cf6, #ec4899);
+    --grad-blue: linear-gradient(90deg, #2563eb, #06b6d4, #3b82f6, #2563eb);
+    --grad-purple: linear-gradient(90deg, #9333ea, #d946ef, #a855f7, #9333ea);
+    --grad-pink: linear-gradient(90deg, #db2777, #f43f5e, #ec4899, #db2777);
+    --grad-indigo: linear-gradient(90deg, #4f46e5, #818cf8, #6366f1, #4f46e5);
+}
+
+body { 
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+    background-color: var(--bg-color); 
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+/* 高级定制版浏览器滚动条 */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* =========================================
+   2. 视觉组件与背景
+========================================= */
+/* 背景网格纹理 */
+.bg-grid-pattern {
+    background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+/* 高级毛玻璃卡片 */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, box-shadow; 
+}
+
+@media (hover: hover) {
+    .glass-panel:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+        background: rgba(255, 255, 255, 0.95);
+    }
+}
+
+/* =========================================
+   3. 动画与交互效果 (Animations)
+========================================= */
+@keyframes shine { 
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+/* 名字的主渐变 */
+.text-gradient {
+    background: var(--grad-main);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% auto;
+    animation: shine 6s linear infinite;
+}
+
+/* 导航按钮的专属渐变流光 */
+.nav-text-grad {
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; 
+    animation: shine 4s linear infinite; 
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+}
+
+@media (hover: hover) {
+    .group:hover .nav-text-grad {
+        transform: translateX(-12px) scale(1.05);
+    }
+}
+
+.grad-blue { background-image: var(--grad-blue); }
+.grad-purple { background-image: var(--grad-purple); }
+.grad-pink { background-image: var(--grad-pink); }
+.grad-indigo { background-image: var(--grad-indigo); }
+
+/* =========================================
+   4. SPA 页面逻辑组件 (核心调速区)
+========================================= */
+
+/* 技能进度条加载动画 */
+.progress-fill {
+    width: 0;
+    transition: width 2.5s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: width;
+}
+
+/* 🚀 页面整体切换/滑入动画 🚀 */
+.page-view { 
+    display: none; 
+    opacity: 0;
+    /* 【修改1】将初始位置从 20px 往下移到 50px，拉长滑动距离，强化“滑入”的物理感 */
+    transform: translateY(50px);
+}
+
+.page-view.active { 
+    display: block; 
+    /* 【修改2】将时间从 1s 延长到 1.5s。
+       配合更大的位移，会产生一种非常优雅、像幕布一样缓缓升起定格的效果 */
+    animation: fadeViewIn 3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeViewIn { 
+    to { opacity: 1; transform: translateY(0); } 
+}
